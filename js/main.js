@@ -98,6 +98,34 @@
             }
         }
     });
+
+        // Form submission
+        $('#submitButton').click(function(event){
+            event.preventDefault();
+            
+            var formData = {
+                NameSurname: $('#name').val(),
+                Email: $('#email').val(),
+                Phone: $('#subject').val(),
+                Message: $('#message').val()
+            };
+    
+            $.ajax({
+                type: 'POST',
+                url: 'https://imumobil.medeniyet.edu.tr:3261/post/data?type=Insert&table=RegisterBeta&columns=NameSurname,Email,Phone,Message',
+                data: JSON.stringify(formData), // Verileri JSON formatına dönüştür
+                contentType: 'application/json', // İçerik türünü JSON olarak belirt
+                dataType: 'json', // Yanıtı JSON olarak bekler
+                success: function(response){
+                    console.log('İstek başarıyla gönderildi.');
+                    console.log(response);
+                },
+                error: function(xhr, status, error){
+                    console.error('İstek gönderilirken bir hata oluştu:', error);
+                }
+            });
+            
+        });
     
 })(jQuery);
 
