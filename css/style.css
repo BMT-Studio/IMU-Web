@@ -44,6 +44,7 @@ h6,
 
 /*** Gradient Text & BG ***/
 .text-primary-gradient {
+    padding-top: 20px;
     background: linear-gradient(to bottom right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -244,6 +245,10 @@ h6,
         background: #FFFFFF;
     }
 
+    .navbar-brand {
+        margin-top: 20px; /* Büyük ekranlarda yazıyı 20 piksel aşağıya kaydırır */
+    }
+
     .sticky-top.navbar-light .navbar-nav .nav-link::before {
         border-top-color: var(--primary);
     }
@@ -253,6 +258,7 @@ h6,
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
 }
 
 
